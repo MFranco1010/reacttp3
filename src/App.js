@@ -3,10 +3,8 @@ import { Cont } from "./components/Cont";
 function App() {
   return (
     <>
-      <div className="App">
-        <h1 className='nav'>Bienvenido</h1>
-        <Cont />
-      </div>
+      <h1 className='nav'>RecetIA</h1>
+      <Cont />
     </>
   );
 }

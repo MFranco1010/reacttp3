@@ -1,29 +1,70 @@
-import React from 'react'
-import 'select2';
+import React, { useState } from 'react';
 
 export const Cont = () => {
+  const [cant, setCant] = useState(1);
+  const [ing, setIng] = useState('');
+  const [pills, setPills] = useState([]);
+
+  const cantState = (a) => {
+    setCant(parseInt(a.target.value, 10));
+  };
+
+  const ingState = (a) => {
+    setIng(a.target.value);
+  };
+
+  const handleSubmit = (i) => {
+    i.preventDefault();
+    if (ing !== '') {
+      const newPill = {
+        cant,
+        ing,
+      };
+      console.log(...pills);
+      setPills([...pills, newPill]);
+      setCant(1);
+      setIng('');
+    }
+  };
+
+  const delPill = (i) => {
+    const updatedPills = [...pills];
+    updatedPills.splice(i, 1);
+    setPills(updatedPills);
+  };
+
   return (
     <>
-      <div className='form'>            
-        <label className='sel'>Cantidad: </label>
-        <select className='sel'>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-        </select>
-        <label className='sel'>Ingrediente: </label>
-        <input className='sel' placeholder='Colocar aquí.'></input>
-        <button className='sel'>Submit</button>
+      <div className='form'>
+        <form onSubmit={handleSubmit}>
+          <label className='sel'>Cantidad: </label>
+          <select className='sel' value={cant} onChange={cantState}>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+              <option key={num} value={num}>
+                {num}
+              </option>
+            ))}
+          </select>
+          <label className='sel'>Ingrediente: </label>
+          <input
+            className='sel'
+            placeholder='Colocar aquí.'
+            value={ing}
+            onChange={ingState}
+          />
+          <button className='sel' type='submit'>
+            Submit
+          </button>
+        </form>
       </div>
       <div className='pills'>
+        {pills.map((pill, a) => (
+          <div key={a} className='pill'>
+            <span>{pill.cant} {pill.ing}</span>
+            <button className='xbtn' onClick={() => delPill(a)}>X</button>
+          </div>
+        ))}
       </div>
     </>
-  )
-}
+  );
+};

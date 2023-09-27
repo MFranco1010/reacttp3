@@ -13,7 +13,7 @@ export const Cont = () => {
     setIng(a.target.value);
   };
 
-  const handleSubmit = (i) => {
+  const btnSubmit = (i) => {
     i.preventDefault();
     if (ing !== '') {
       const newPill = {
@@ -36,7 +36,7 @@ export const Cont = () => {
   return (
     <>
       <div className='form'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={btnSubmit}>
           <label className='sel'>Cantidad: </label>
           <select className='sel' value={cant} onChange={cantState}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (

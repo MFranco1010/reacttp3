@@ -6,7 +6,7 @@ export const Cont = () => {
   const [pills, setPills] = useState([]);
 
   const cantState = (a) => {
-    setCant(parseInt(a.target.value, 10));
+    setCant(a.target.value);
   };
 
   const ingState = (a) => {

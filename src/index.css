@@ -2,6 +2,8 @@
 
 body {
     background-color: bisque;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .title {
@@ -26,6 +28,7 @@ body {
     justify-content: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.212);
+    margin: 20px;
 }
 
 .pills {
@@ -40,6 +43,13 @@ body {
     box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.212);
 }
 
+@media (max-width: 580px) {
+    .pills {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
 .pill {
     background-color: rgb(12, 208, 91);
     margin: 5px;
@@ -51,6 +61,7 @@ body {
 .sel {
     margin: 5px;
     border-radius: 10px;
+    padding: 10px;
     font-family: 'Mooli', sans-serif;
 }
 
@@ -59,4 +70,16 @@ body {
     padding: 3px;
     border-radius: 50px;
     background-color: red;
+}
+
+.foot {
+    display: flex;
+    background-color: springgreen;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Mooli', sans-serif;
 }

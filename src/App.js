@@ -1,4 +1,5 @@
 import { Cont } from "./components/Cont";
+import { Foot } from "./components/Foot";
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <h1 className='title'>RecetIA</h1>
       <h2 className="subtitle">mejor pedile recetas a tu tia...</h2>
       <Cont />
+      <Foot />
     </>
   );
 }

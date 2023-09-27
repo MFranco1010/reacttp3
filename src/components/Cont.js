@@ -53,7 +53,7 @@ export const Cont = () => {
             onChange={ingState}
           />
           <button className='sel' type='submit'>
-            Submit
+            Añadir
           </button>
         </form>
       </div>

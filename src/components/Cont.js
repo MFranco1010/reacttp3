@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Api } from "./Api";
 
 export const Cont = () => {
   const [cant, setCant] = useState(1);
@@ -65,6 +66,7 @@ export const Cont = () => {
           </div>
         ))}
       </div>
+      <Api pil={pills} />
     </>
   );
 };

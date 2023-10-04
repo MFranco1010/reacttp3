@@ -6,7 +6,7 @@ export const Api = (props) => {
     const endpoint = 'https://api.openai.com/v1/engines/text-davinci-002/completions';
     const arr = props.pil;
 
-    async function createRes(arr) {
+    async function createRes(a) {
         try {
         const requestOptions = {
             method: 'POST',
@@ -15,7 +15,7 @@ export const Api = (props) => {
             'Authorization': `Bearer ${token}`,
             },
             body: JSON.stringify({
-            prompt: arr,
+            prompt: a,
             max_tokens: 500,
             }),
         };
@@ -37,7 +37,7 @@ export const Api = (props) => {
         <div className='pills'>
         <button className='sel' onClick={opnai}>Pedir receta a la tia</button>
         <div>
-            <h1>Receta:</h1>
+            <p>Receta:</p>
             <p>{res}</p>
         </div>
         </div>

@@ -12,6 +12,7 @@ export const Cont = () => {
 
   const ingState = (a) => {
     setIng(a.target.value);
+    console.log(ing);
   };
 
   const btnSubmit = (i) => {
@@ -29,9 +30,9 @@ export const Cont = () => {
   };
 
   const delPill = (i) => {
-    const updatedPills = [...pills];
-    updatedPills.splice(i, 1);
-    setPills(updatedPills);
+    const newPills = [...pills];
+    newPills.splice(i, 1);
+    setPills(newPills);
   };
 
   return (
